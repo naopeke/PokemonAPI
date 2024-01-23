@@ -16,16 +16,8 @@ async function getPokemon(e){
     // to prevent the default reload
     e.preventDefault();
 
-    var pokemonName = document.getElementById('input').value.toLowerCase();
-    let url;
-    // if the input is number,
-    if(!isNaN(pokemonName)){
-        url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
-
-    // if the input isn't number, name
-    } else {
-        url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}/`
-    }
+    var pokemonInput = document.getElementById('input').value.toLowerCase();
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonInput}`;
 
     const param = {
         headers:{'content-type': 'application/json; charset=UTF-8'},
