@@ -1,0 +1,59 @@
+* {
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #eff3ff;
+}
+
+header{
+    /* border: 2px solid red; */
+    height: 80px;
+    /* background-color: rgb(19, 0, 0); */
+}
+
+header img{
+    /* border:2px solid red; */
+    height: 70px;
+    padding: 5px 5px 0 10px;
+}
+
+
+main {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-wrapper {
+    /* border:2px solid orange; */
+    margin: 50px auto;
+    display:flex;
+    justify-content: center;
+}
+
+#card {
+    border:1px solid black;
+    width:400px;
+    height: 500px;
+    padding: 30px 20px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #f0bc68 0%, #f0bc68 50%, #c4d7d1 50%, #c4d7d1 100%);
+
+}
+
+#pokemonImage {
+    width: 130px;
+    margin-bottom: 70px;
+}
+
+
