@@ -18,36 +18,38 @@
     <main>
         <form action="" id="pokemonForm">
             <input class="search" type="text" id="input" placeholder="Search by ID">
-            <button class="btn btn-primary" type="submit" id="submit">Search</button>
+            <button class="btn btn-primary" type="submit" id="submit">Enter the ID or name of a Pokemon</button>
         </form>
 
         <div class="card-wrapper id="pokemonContainer">
             <div id="card">
                 <img id="pokemonImage" src="kodakku.png" alt="Pokemon Image">
 
-                <table class="table table-bordered">
-                 <tbody>
-                    <tr>
-                    <th scope="row">ID</th>
-                    <td id="pokemonId"></td>
-                    </tr>
-                    
-                    <tr>
-                    <th scope="row">Name</th>
-                    <td id="pokemonName"></td>
-                    </tr>
-                    
-                    <tr>
-                    <th scope="row">Type</th>
-                    <td id="pokemonType"></td>
-                    </tr>
-                    
-                    <tr>
-                    <th scope="row">Ability</th>
-                    <td id="pokemonAbilities"></td>
-                    </tr>
-                  </tbody>
-                 </table>
+                <div class="hidden">
+                    <table class="table table-bordered">
+                        <tbody>
+                           <tr>
+                           <th scope="row">ID</th>
+                           <td id="pokemonId"></td>
+                           </tr>
+                           
+                           <tr>
+                           <th scope="row">Name</th>
+                           <td id="pokemonName"></td>
+                           </tr>
+                           
+                           <tr>
+                           <th scope="row">Type</th>
+                           <td id="pokemonType"></td>
+                           </tr>
+                           
+                           <tr>
+                           <th scope="row">Ability</th>
+                           <td id="pokemonAbilities"></td>
+                           </tr>
+                         </tbody>
+                        </table>
+                </div>
                 </div>
             </div>
         </div>

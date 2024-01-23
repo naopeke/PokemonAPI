@@ -17,7 +17,16 @@ async function getPokemon(e){
     e.preventDefault();
 
     var pokemonName = document.getElementById('input').value.toLowerCase();
-    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
+    let url;
+    // if the input is number,
+    if(!isNaN(pokemonName)){
+        url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
+
+    // if the input isn't number, name
+    } else {
+        url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}/`
+    }
+
     const param = {
         headers:{'content-type': 'application/json; charset=UTF-8'},
         method: 'GET'
@@ -51,6 +60,8 @@ function displayPokemon(pokemon){
     document.getElementById('pokemonAbilities').textContent = `${pokemon.abilities.join(', ')}`;
     // document.getElementById('effectEntries').textContent = `${pokemon.effectEntries}`
 }
+
+
 
 // function fetchPokemon(pokemonName) {
 //     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
