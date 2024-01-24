@@ -16,7 +16,7 @@ async function getPokemon(e){
     // to prevent the default reload
     e.preventDefault();
 
-    var pokemonInput = document.getElementById('input').value.toLowerCase();
+    const pokemonInput = document.getElementById('input').value.toLowerCase();
     const url = `https://pokeapi.co/api/v2/pokemon/${pokemonInput}`;
 
     const param = {
@@ -38,8 +38,8 @@ async function getPokemon(e){
 
         displayPokemon(pokemon);
 
-    } catch (error){
-        console.error(error);
+    } catch (e){
+        console.error(e);
     }
 }
 
@@ -50,16 +50,26 @@ function displayPokemon(pokemon){
     document.getElementById('pokemonName').textContent = `${pokemon.name}`;
     document.getElementById('pokemonType').textContent = `${pokemon.types.join(', ')}`;
     document.getElementById('pokemonAbilities').textContent = `${pokemon.abilities.join(', ')}`;
-    // document.getElementById('effectEntries').textContent = `${pokemon.effectEntries}`
 }
 
 
+//using then and catch
+// using then and catch
+function getPokemon2(pokemonName){
+    fetch (`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+    .then(data => data.json())
+    .then (result => {
+        let pokemon = new Pokemon(
+            result.id,
+            result.sprites.front_shiny,
+            result.name,
+            result.types.map((type) => type.type.name),
+            result.abilities.map((ability) => ability.ability.name)
+        );
 
-// function fetchPokemon(pokemonName) {
-//     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
-//         .then(response => response.json())
-//         .then(data => {
-//             // データをHTMLに表示する処理
-//         })
-//         .catch(error => console.error('Error:', error));
-// }
+        displayPokemon(pokemon);
+    })
+    .catch(e => {
+        console.error(e);
+    });
+}
