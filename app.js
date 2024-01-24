@@ -52,3 +52,24 @@ function displayPokemon(pokemon){
     document.getElementById('pokemonType').textContent = `${pokemon.types.join(', ')}`;
     document.getElementById('pokemonAbilities').textContent = `${pokemon.abilities.join(', ')}`;
 }
+
+
+// using then and catch
+function getPokemon2(pokemonName){
+    fetch (`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+    .then(data => data.json())
+    .then (result => {
+        let pokemon = new Pokemon(
+            result.id,
+            result.sprites.front_shiny,
+            result.name,
+            result.types.map((type) => type.type.name),
+            result.abilities.map((ability) => ability.ability.name)
+        );
+
+        displayPokemon(pokemon);
+    })
+    .catch(e => {
+        console.error(e);
+    });
+}
