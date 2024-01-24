@@ -16,7 +16,7 @@ async function getPokemon(e){
     // to prevent the default reload
     e.preventDefault();
 
-    var pokemonInput = document.getElementById('input').value.toLowerCase();
+    const pokemonInput = document.getElementById('input').value.toLowerCase();
     const url = `https://pokeapi.co/api/v2/pokemon/${pokemonInput}`;
 
     const param = {
@@ -39,8 +39,8 @@ async function getPokemon(e){
 
         displayPokemon(pokemon);
 
-    } catch (error){
-        console.error(error);
+    } catch (e){
+        console.error(e);
     }
 }
 
