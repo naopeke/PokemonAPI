@@ -28,6 +28,7 @@ async function getPokemon(e){
         let data = await fetch(url, param);
         let result = await data.json();
 
+        // create a new instance of Pokemon
         let pokemon = new Pokemon(
             result.id,
             result.sprites.front_shiny,
@@ -50,16 +51,4 @@ function displayPokemon(pokemon){
     document.getElementById('pokemonName').textContent = `${pokemon.name}`;
     document.getElementById('pokemonType').textContent = `${pokemon.types.join(', ')}`;
     document.getElementById('pokemonAbilities').textContent = `${pokemon.abilities.join(', ')}`;
-    // document.getElementById('effectEntries').textContent = `${pokemon.effectEntries}`
 }
-
-
-
-// function fetchPokemon(pokemonName) {
-//     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
-//         .then(response => response.json())
-//         .then(data => {
-//             // データをHTMLに表示する処理
-//         })
-//         .catch(error => console.error('Error:', error));
-// }
